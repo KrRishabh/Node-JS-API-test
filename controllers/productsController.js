@@ -16,6 +16,7 @@ exports.addProduct = (req, res, next) => {
   const id = new Date().getTime();
   const currProduct = new Product(id, title, imageUrl, desc, price);
   currProduct.save();
+  console.log("product saved");
   res.status(202).json({ message: "Product created!", data: [] });
   next();
 };
